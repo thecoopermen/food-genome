@@ -1,0 +1,25 @@
+## Trait
+* simple
+* heavy
+* crunchy
+* creamy
+* tart
+* sour
+* sweet
+* savory
+* earthy
+* fluffy
+* herbacious
+* nutty
+* raw
+* buttery
+* flaky
+* briney
+* salty
+* oily
+* starchy
+* fatty
+* comfort food
+* spicy
+* zesty
+* rich
