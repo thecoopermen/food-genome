@@ -5,4 +5,12 @@ FactoryGirl.define do
     email    { Faker::Internet.email }
     password 'password'
   end
+
+  factory :trait do
+    name { Faker::Lorem.word }
+  end
+
+  factory :food do
+    name { Faker::Lorem.word }
+  end
 end
