@@ -1,0 +1,61 @@
+@mixin sp-css {
+	background-repeat: no-repeat;
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0;
+	text-indent: 100%;
+	border: 0;
+} 
+
+@mixin sp-center($sprite, $image) {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -#{sp-width($sprite, $image)/2};
+	margin-top: -#{sp-height($sprite, $image)/2};
+}
+
+// http://compass-style.org/reference/compass/helpers/sprites/
+@mixin get-sprite($map, $sprite, $css: true, $repeat: no-repeat, $height: true, $width: true) {
+	$sprite-layout: smart;
+
+	//http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+	$sprite-image: sprite-file($map, $sprite);
+
+	// http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+	$sprite-map: sprite-url($map);
+
+	// http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+	$sprite-position: sprite-position($map, $sprite);
+
+	background: $sprite-map $sprite-position $repeat;
+
+	// http://compass-style.org/reference/compass/helpers/image-dimensions/
+	@if ($height == true) {
+		$sprite-height: image-height($sprite-image);
+		height: $sprite-height;
+	}
+
+	// http://compass-style.org/reference/compass/helpers/image-dimensions/
+	@if ($width == true) {
+		$sprite-width: image-width($sprite-image);
+		width: $sprite-width;
+	}
+
+	@if ($css == true) {
+		@include sp-css;
+	} 
+}
+
+@mixin sp($family, $sprite, $css: true) {
+  @include get-sprite(sprite-map('sp-#{$family}/*.png'), $sprite, $css);
+}
+
+@function sp-height($sprite, $name) {
+	@return image-height(sprite-file(sprite-map("sp-#{$sprite}/*.png"), $name));
+}
+
+@function sp-width($sprite, $name) {
+	@return image-width(sprite-file(sprite-map("sp-#{$sprite}/*.png"), $name));
+}
+

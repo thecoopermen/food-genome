@@ -1,0 +1,17 @@
+#g-capital {
+	background-color: $white;
+}
+
+#g-user-nav {
+	float: right;
+
+	li {
+		@include inline-block(middle);
+	}
+}
+
+#g-header {
+	.logo {
+		@include sp(site, logo);
+	}
+}

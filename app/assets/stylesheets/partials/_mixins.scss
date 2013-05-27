@@ -1,0 +1,174 @@
+@mixin group {
+    min-height: 1px;
+
+    &:after {
+		content: ".";
+		display: block;
+		height: 0;
+		line-height: 0;
+		font-size: 0;
+		clear: both;
+		visibility: hidden;
+    }
+}
+
+@mixin inline-block($align: '') {
+	display:-moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+	@if $align != '' {
+		vertical-align: $align;
+	}
+}
+
+@mixin ellipsis() {
+	text-overflow: ellipsis;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@mixin dim($x, $y: $x) {
+	width: #{$x}px;
+	height: #{$y}px;
+}
+
+@mixin list {
+	@include group;
+
+	> li {
+		float: left;
+	}
+}
+
+@mixin stretch {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+@mixin oneline($height) {
+	line-height: $height;
+	height: $height;
+}
+
+@mixin mask($opacity: 0.5) {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: $opacity;
+	z-index: 100;
+}
+
+$vender-prefixes: 'webkit', 'khtml', 'moz', 'ms';
+
+@mixin vendor($prop, $value) {
+	@each $prefix in $vender-prefixes {
+		-#{$prefix}-#{$prop}: $value;
+	}
+	#{$prop}: $value;
+}
+
+@mixin vendorValue($prop, $value) {
+	@each $prefix in $vender-prefixes {
+		#{$prop}: -#{$prefix}-#{$value};
+	}
+	#{$prop}: #{$value};
+}
+
+@mixin round( $radius: 5 ) {
+  -webkit-border-radius: #{$radius}px;
+  -moz-border-radius: #{$radius}px;
+  border-radius: #{$radius}px;
+}
+
+@mixin round-corner($horizontal, $vertical, $magnitude) {
+  border-#{$vertical}-#{$horizontal}-radius: #{$magnitude}px;
+  -moz-border-radius-#{$vertical}#{$horizontal}: #{$magnitude}px;
+  -webkit-border-#{$vertical}-#{$horizontal}-radius: #{$magnitude}px;
+}
+
+@mixin text-shadow($horizontal: 1, $vertical: 1, $magnitude: 1, $color: #888) {
+   text-shadow: #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+}
+
+@mixin transition($property, $time: 0.15) {
+    -webkit-transition: $property #{$time}s ease-in-out;
+    -moz-transition: $property #{$time}s ease-in-out;
+    -o-transition: $property #{$time}s ease-in-out;
+    transition: $property #{$time}s ease-in-out;
+}
+
+@mixin inner-shadow($horizontal: 5, $vertical: 5, $magnitude: 5, $color: #888) {
+    -moz-box-shadow: inset #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+    -webkit-box-shadow: inset #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+    box-shadow: inset #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+}
+
+@mixin box-shadow($horizontal: 5, $vertical: 5, $magnitude: 5, $color: #888) {
+    -moz-box-shadow: #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+    -webkit-box-shadow: #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+    box-shadow: #{$horizontal}px #{$vertical}px #{$magnitude}px $color;
+}
+
+@mixin box-shadow-none {
+  @include vendor(box-shadow, none);
+}
+
+@mixin dotted-y($position, $color: '') {
+    background-image: url("/assets/img/site/dotted-y.png");
+    background-repeat: repeat-y;
+    background-position: $position top;
+	@if $color != '' {
+		background-image: url("/assets/img/site/dotted-y-#{$color}.png");
+	}
+}
+
+@mixin dotted-x( $position, $color: '' ) {
+    background-image: url("/assets/img/site/dotted-x.png");
+    background-repeat: repeat-x;
+    background-position: left $position;
+	@if $color != '' {
+		background-image: url("/assets/img/site/dotted-y-#{$color}.png");
+	}
+}
+
+@mixin dotted($x, $y) {
+	background-image: url($x), url($y), url($x), url($y);
+	background-position: left top, top right, left bottom, top left;
+	background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+}
+
+//For mobile-first approach
+@mixin break-min($breakpoint) {
+	@media only screen and (min-width: $breakpoint + px) { @content; }
+}
+
+//For desktop-first approach
+@mixin break-max($breakpoint) {
+	@media only screen and (max-width: $breakpoint + px) { @content; }
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+		@content
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		@content
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		@content
+	}
+
+	&:-ms-input-placeholder {  
+		@content
+	}
+}
+
