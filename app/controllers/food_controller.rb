@@ -13,7 +13,7 @@ class FoodController < ApplicationController
     if @food.save
       redirect_to foods_path, notice: "#{@food.name} successfully created"
     else
-      render: new
+      render :new
     end
   end
 end
