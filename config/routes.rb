@@ -6,6 +6,4 @@ FoodGenome::Application.routes.draw do
   get  '/logout', to: 'sessions#destroy'
 
   root to: redirect('/food')
-
-  match '/food/new', :to => 'food#new'
 end

@@ -8,5 +8,6 @@
   <%= f.submit %>
 <% end %>
 
-
-
+<script type="text/javascript">
+  var traits = <%= Trait.all.map(&:name).to_json.html_safe %>
+</script>
