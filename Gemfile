@@ -26,4 +26,5 @@ end
 
 group :development do
   gem 'sextant',            '~> 0.2'
+  gem 'capistrano',         '~> 2.15'
 end
