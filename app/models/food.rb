@@ -6,7 +6,11 @@ class Food < ActiveRecord::Base
 
   validates :name, presence: true
 
-  def traits=(traits)
-    @traits = traits
+  def traits_string=(traits_string)
+    @traits_string = traits_string
+  end
+
+  def traits_string
+    @traits_string
   end
 end
