@@ -13,6 +13,7 @@ body {
 body {
 	position: relative;
 	-moz-font-feature-settings: "liga=0";
+    background-color: #f2f2f2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,9 +34,8 @@ li {
 }
 
 a {
-	display: block;
-	text-decoration: none;
-  color: #333;
+  display: block;
+  text-decoration: none;
   cursor: pointer;
 }
 

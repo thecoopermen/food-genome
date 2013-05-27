@@ -1,0 +1,10 @@
+body {
+	@include font;
+	@include serif;
+	color: #333;
+}
+
+#g-capital {
+	@include font(14, 14);
+	font-weight: 700;
+}

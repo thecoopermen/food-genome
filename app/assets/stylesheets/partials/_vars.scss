@@ -2,3 +2,9 @@ $white: #fff;
 
 $img: '/assets/';
 $site: $img + 'site/';
+
+// fonts
+$line: 24;
+$font-size: 16;
+$em: $font-size * 1;
+$base: ($line / $em) * 1em;

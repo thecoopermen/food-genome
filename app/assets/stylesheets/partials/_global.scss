@@ -1,16 +1,24 @@
 #g-capital {
+	padding: 0.75em 0;
+	@include group;
 	background-color: $white;
-}
+	border-bottom: 1px solid #dddddd;
 
-#g-user-nav {
-	float: right;
+	.nav {
+		float: right;
 
-	li {
-		@include inline-block(middle);
+		li {
+			@include inline-block(middle);
+			margin-left: 0.75em;
+		}
 	}
 }
 
+
 #g-header {
+	@include group;
+	padding: 1.5em 0;
+
 	.logo {
 		@include sp(site, logo);
 	}

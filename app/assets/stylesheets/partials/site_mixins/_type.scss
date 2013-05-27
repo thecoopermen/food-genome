@@ -1,0 +1,20 @@
+@mixin font($newFont: $font-size, $newLine: $line) {
+    font-size: #{$newFont / $em}em;
+    line-height: $newLine / $newFont * 1em;
+}
+
+@mixin sans() {
+	@include antialias;
+}
+
+@mixin serif {
+	font-family: 'Lusitana', serif;
+}
+
+@mixin antialias($boolean: true) {
+	@if ($boolean == true) {
+		-webkit-font-smoothing: antialiased;
+	} @else {
+		-webkit-font-smoothing: normal;
+	}
+}
