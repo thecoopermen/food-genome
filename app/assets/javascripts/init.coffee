@@ -3,4 +3,5 @@ jQuery ->
 		el: '#traits'
 		plugin: 'tagit'
 		config:
-			availableTags: ['hi', 'bye']
+			availableTags: window.traits
+			fieldName: 'food[trait_names][]'

@@ -11,7 +11,7 @@ class FoodController < ApplicationController
   def create
     @food = Food.new(params[:food])
     if @food.save
-      redirect_to foods_path, notice: "#{@food.name} successfully created"
+      redirect_to food_index_path, notice: "#{@food.name} successfully created"
     else
       render :new
     end
