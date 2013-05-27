@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+
+env       = Rails.env
+yml       = YAML.load(ERB.new(File.read(File.expand_path(File.dirname(__FILE__) + "/../config/database.yml"))).result)[env]
+outdir    = "/data/backup"
+outfile   = "#{Time.now.strftime("%Y%m%d%H%M%S")}.sql.bz2"
+full_path = "#{outdir}/#{outfile}"
+args = [
+  "-h #{yml['host'] || 'localhost'}",
+  "-u #{yml['username'] || 'root'}",
+  "#{yml['database']}",
+  "| bzip2 -c > #{full_path}"
+]
+args.insert(0, "-p'#{yml['password']}'") if yml['password']
+
+`mkdir -p #{outdir} && mysqldump #{args.flatten.join(' ')}`
+
+storage   = Fog::Storage.new(CarrierWave::Uploader::Base.fog_credentials)
+directory = storage.directories.get(CarrierWave::Uploader::Base.fog_directory)
+directory.files.create(key: "backups/database/#{outfile}", :body => File.open(full_path))
+File.delete(full_path)

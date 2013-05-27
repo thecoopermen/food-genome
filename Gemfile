@@ -5,6 +5,8 @@ gem 'mysql2',               '~> 0.3'
 gem 'bcrypt-ruby',          '~> 3.0'
 gem 'jquery-rails',         '~> 2.2'
 gem 'pry-rails',            '~> 0.3'
+gem 'carrierwave',          '~> 0.8'
+gem 'fog',                  '~> 1.11'
 
 group :assets do
   gem 'sass-rails',         '~> 3.2'
