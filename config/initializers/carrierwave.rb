@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       aws_access_key_id:     'AKIAIU7MAU7YCJFL2A5A',
       aws_secret_access_key: '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'
     }
-    config.fog_directory  = "foodgenome.production"
+    config.fog_directory  = "foodgenome-production"
     config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' }
   end
 end
