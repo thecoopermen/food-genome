@@ -7,6 +7,7 @@ gem 'jquery-rails',         '~> 2.2'
 gem 'pry-rails',            '~> 0.3'
 gem 'carrierwave',          '~> 0.8'
 gem 'fog',                  '~> 1.11'
+gem 'flickraw',             '~> 0.9'
 
 group :assets do
   gem 'sass-rails',         '~> 3.2'

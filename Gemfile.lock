@@ -70,6 +70,7 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.8.1)
+    flickraw (0.9.6)
     fog (1.11.1)
       builder
       excon (~> 0.20)
@@ -220,6 +221,7 @@ DEPENDENCIES
   compass-rails
   factory_girl_rails (~> 4.2)
   faker (~> 1.1)
+  flickraw (~> 0.9)
   fog (~> 1.11)
   guard-rails (~> 0.4)
   guard-rspec (~> 3.0)
