@@ -4,13 +4,16 @@ $space: 10px;
   position: relative;
   @include group;
   background-color: $white;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $greyD;
+  border-top: 1px solid $accent;
 
   .logo {
     @include sp(site, logo);
     @include sp-center(site, logo, y);
     margin-left: $space;
   }
+
+  $padding-x: 15px;
 
   .nav {
     float: right;
@@ -21,15 +24,35 @@ $space: 10px;
 
     a {
       border-left: 1px solid $greyE; 
-        padding: 1em 0.75em;
+        padding: 1em $padding-x;
+    }
+
+    .toggle {
+      padding-right: $padding-x + 10px;
+
+      &:after {
+        content: '';
+        @include sp(icon, dropdown-arr);
+        @include sp-center(icon, dropdown-arr, y);
+        right: 10px;;
+      }
+    }
+
+    .dropdown {
+      background-color: $white;
+      border: 1px solid $greyD;
+      border-bottom: 0;
+      min-width: 100px - $padding-x*2;
+      right: 0;
+
+      li {
+        display: block;
+      }
+
+      a {
+        border: 0;
+        border-bottom: 1px solid $greyD;
+      }
     }
   }
-}
-
-#g-user-toggle {
-  
-}
-
-#g-user-dropdown {
-  
 }

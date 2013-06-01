@@ -6,7 +6,7 @@ body {
 
 #g-capital {
 	@include font(12, 12);
-	font-weight: 700;
+  text-align: center;
 
     a {
       color: #333;

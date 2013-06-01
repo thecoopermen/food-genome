@@ -19,9 +19,9 @@
       <% if current_user %>
 
         <li>
-          <a class="js-toggle" id="g-user-toggle"><%= current_user.name %></a>
+          <a class="js-toggle toggle"><%= current_user.name %></a>
 
-          <ul class="js-dropdown" id="g-user-dropdown">
+          <ul class="js-dropdown dropdown">
             <li><%= link_to 'Sign Out', logout_path %></li>
           </ul>
         </li>
