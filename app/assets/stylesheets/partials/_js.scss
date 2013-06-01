@@ -1,0 +1,11 @@
+.js-toggle {
+}
+
+.js-dropdown {
+    display: none;
+    position: absolute;
+
+    &.s-active {
+        display: block;
+    }
+}

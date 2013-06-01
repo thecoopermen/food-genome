@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require underscore
 //= require app
 //= require jquery_base
 //= require jquery_plugin

@@ -1,6 +1,7 @@
+$space: 10px;
+
 #g-capital {
   position: relative;
-  padding: 0.75em 0;
   @include group;
   background-color: $white;
   border-bottom: 1px solid #dddddd;
@@ -8,6 +9,7 @@
   .logo {
     @include sp(site, logo);
     @include sp-center(site, logo, y);
+    margin-left: $space;
   }
 
   .nav {
@@ -15,7 +17,19 @@
 
     li {
         @include inline-block(middle);
-        margin-left: 0.75em;
+    }
+
+    a {
+      border-left: 1px solid $greyE; 
+        padding: 1em 0.75em;
     }
   }
+}
+
+#g-user-toggle {
+  
+}
+
+#g-user-dropdown {
+  
 }

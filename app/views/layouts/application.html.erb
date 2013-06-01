@@ -11,22 +11,27 @@
 <body>
 
   <header id="g-capital">
-    <div class="l">
-      <%= link_to app_name, root_path,  :class => 'logo' %>
+    <%= link_to app_name, root_path,  :class => 'logo' %>
 
-      <ul class="nav">
-        <% if current_user %>
+    <ul class="nav">
+      <li><%= link_to 'New Food', new_food_path %></li>
 
-          <li><%= current_user.name %></li>
-          <li><%= link_to 'Sign Out', logout_path %></li>
+      <% if current_user %>
 
-        <% else %>
+        <li>
+          <a class="js-toggle" id="g-user-toggle"><%= current_user.name %></a>
 
-          <li><%= link_to 'Sign In', login_path %></li>
+          <ul class="js-dropdown" id="g-user-dropdown">
+            <li><%= link_to 'Sign Out', logout_path %></li>
+          </ul>
+        </li>
 
-        <% end %>
-      </ul>
-    </div>
+      <% else %>
+
+        <li><%= link_to 'Sign In', login_path %></li>
+
+      <% end %>
+    </ul>
   </header>
 
 <% flash.each do |key, value| %>

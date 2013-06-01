@@ -7,4 +7,8 @@ body {
 #g-capital {
 	@include font(12, 12);
 	font-weight: 700;
+
+    a {
+      color: #333;
+    }
 }
