@@ -26,6 +26,7 @@ group :development, :test do
   gem 'spork-rails',        '~> 3.2'
   gem 'factory_girl_rails', '~> 4.2'
   gem 'faker',              '~> 1.1'
+  gem 'guard-livereload'
 end
 
 group :development do
