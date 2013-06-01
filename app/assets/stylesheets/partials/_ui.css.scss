@@ -1,0 +1,46 @@
+.ui-input-wrapper {
+  border: 1px solid $greyBorder;
+  @include inner-shadow(1, 1, 3, rgba($black, 0.075));
+  @include round(3);
+  padding: 0.5em 1em;
+  background-color: #fafafa;
+}
+
+.ui-input {
+  border: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.ui-tags {
+  @extend .ui-input-wrapper;
+  position: relative;
+
+  input {
+    border: 0;
+    background-color: transparent;
+  }
+
+  li {
+  }
+
+  .tagit-choice {
+    background-color: $accent;
+    float: left;
+  }
+
+  .tagit-label {
+    
+  }
+
+  .tagit-close {
+    
+  }
+}
+
+.ui-helper-hidden-accessible {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5em;
+}

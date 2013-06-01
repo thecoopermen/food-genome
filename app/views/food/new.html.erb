@@ -6,12 +6,19 @@
   </header>
 
   <div class="content">
-    <%= f.label :name %>:
-    <%= f.text_field :name %><br />
+    <section class="field">
+      <%= f.label :name %>
 
-    <%= f.label :traits %>:
-    <ul id="traits">
-    </ul>
+      <div class="ui-input-wrapper">
+        <%= f.text_field :name, :class => 'ui-input', :placeholder => 'e.g. pickle, cookie, chicken carbonara...' %><br />
+      </div>
+    </section>
+
+    <section class="field">
+      <%= f.label :traits %>
+      <ul id="traits" class="ui-tags">
+      </ul>
+    </section>
   </div>
 
   <footer class="footer">

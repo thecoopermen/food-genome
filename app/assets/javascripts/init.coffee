@@ -5,6 +5,7 @@ jQuery ->
     config:
       availableTags: window.traits
       fieldName: 'food[trait_names][]'
+      animate: false
 
   userDropdown = new app.Toggler
     el: '.js-toggle'
