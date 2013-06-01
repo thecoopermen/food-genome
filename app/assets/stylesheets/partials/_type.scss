@@ -12,3 +12,7 @@ body {
       color: #333;
     }
 }
+
+.pg-title {
+  @include font(18, 18);
+}

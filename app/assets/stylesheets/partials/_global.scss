@@ -4,7 +4,7 @@ $space: 10px;
   position: relative;
   @include group;
   background-color: $white;
-  border-bottom: 1px solid $greyD;
+  border-bottom: 1px solid $greyBorder;
   border-top: 1px solid $accent;
 
   .logo {
@@ -13,22 +13,28 @@ $space: 10px;
     margin-left: $space;
   }
 
-  $padding-x: 15px;
+  $padding-x: 12px;
 
   .nav {
     float: right;
 
     li {
         @include inline-block(middle);
+        margin-right: -3px;
     }
 
     a {
       border-left: 1px solid $greyE; 
-        padding: 1em $padding-x;
+      padding: 14px $padding-x;
+      @include transition(background-color, 0.1);
+
+      &:hover {
+        background-color: $greyF;
+      }
     }
 
     .toggle {
-      padding-right: $padding-x + 10px;
+      padding-right: $padding-x + 16px;
 
       &:after {
         content: '';
@@ -40,7 +46,7 @@ $space: 10px;
 
     .dropdown {
       background-color: $white;
-      border: 1px solid $greyD;
+      border: 1px solid $greyBorder;
       border-bottom: 0;
       min-width: 100px - $padding-x*2;
       right: 0;
@@ -51,7 +57,7 @@ $space: 10px;
 
       a {
         border: 0;
-        border-bottom: 1px solid $greyD;
+        border-bottom: 1px solid $greyBorder;
       }
     }
   }

@@ -1,0 +1,20 @@
+#pg-new-food-form {
+    margin: 0 auto;
+    width: 400px;
+    background-color: $white;
+    border: 1px solid $greyBorder; 
+
+    .header,
+    .content,
+    .footer {
+       padding: 1em 1.25em;
+    }
+
+    .header {
+        border-bottom: 1px solid $greyBorderLight;
+    }
+
+    .footer {
+        border-top: 1px solid $greyBorderLight;
+    }
+}

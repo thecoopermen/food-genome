@@ -1,11 +1,22 @@
-<%= form_for @food, url: food_index_path do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
+<%= link_to 'Back to Foods', food_index_path, :class => 'ui-back'%>
 
-  <ul id="traits">
-  </ul>
+<%= form_for @food, url: food_index_path, :html => {:id => 'pg-new-food-form'} do |f| %>
+  <header class="header">
+    <h1 class="pg-title">New Food</h1>
+  </header>
 
-  <%= f.submit %>
+  <div class="content">
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br />
+
+    <%= f.label :traits %>:
+    <ul id="traits">
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <%= f.submit %>
+  </footer>
 <% end %>
 
 <script type="text/javascript">
