@@ -1,25 +1,21 @@
 #g-capital {
-	padding: 0.75em 0;
-	@include group;
-	background-color: $white;
-	border-bottom: 1px solid #dddddd;
+  position: relative;
+  padding: 0.75em 0;
+  @include group;
+  background-color: $white;
+  border-bottom: 1px solid #dddddd;
 
-	.nav {
-		float: right;
+  .logo {
+    @include sp(site, logo);
+    @include sp-center(site, logo, y);
+  }
 
-		li {
-			@include inline-block(middle);
-			margin-left: 0.75em;
-		}
-	}
-}
+  .nav {
+    float: right;
 
-
-#g-header {
-	@include group;
-	padding: 1.5em 0;
-
-	.logo {
-		@include sp(site, logo);
-	}
+    li {
+        @include inline-block(middle);
+        margin-left: 0.75em;
+    }
+  }
 }

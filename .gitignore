@@ -16,3 +16,4 @@
 
 /.ruby-gemset
 .DS_Store
+.vimrc

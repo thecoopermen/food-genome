@@ -7,12 +7,20 @@
 	border: 0;
 } 
 
-@mixin sp-center($sprite, $image) {
+@mixin sp-center($sprite, $image, $dir: '') {
 	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -#{sp-width($sprite, $image)/2};
-	margin-top: -#{sp-height($sprite, $image)/2};
+	@if ($dir == x) {
+		left: 50%;
+		margin-left: -#{sp-width($sprite, $image)/2};
+	} @else if ($dir == y) {
+		top: 50%;
+		margin-top: -#{sp-height($sprite, $image)/2};
+	} @else {
+		top: 50%;
+		left: 50%;
+		margin-top: -#{sp-height($sprite, $image)/2};
+		margin-left: -#{sp-width($sprite, $image)/2};
+	}
 }
 
 // http://compass-style.org/reference/compass/helpers/sprites/

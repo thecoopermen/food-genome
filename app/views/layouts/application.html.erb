@@ -12,6 +12,8 @@
 
   <header id="g-capital">
     <div class="l">
+      <%= link_to app_name, root_path,  :class => 'logo' %>
+
       <ul class="nav">
         <% if current_user %>
 
@@ -26,8 +28,6 @@
       </ul>
     </div>
   </header>
-
-<%= render 'layouts/header' %>
 
 <% flash.each do |key, value| %>
   <%= content_tag :div, value, class: [ :flash, key ].join(' ') %>
