@@ -2,6 +2,7 @@ body {
 	@include font;
 	@include serif;
 	color: #333;
+  @include antialias;
 }
 
 #g-capital {
@@ -15,11 +16,20 @@ body {
 
 .pg-title {
   @include font(18, 18);
+  font-weight: 400;
 }
 
 #pg-new-food-form {
   label {
     @include font(14, 14);
+  }
+
+  .header {
+    text-transform: uppercase;
+  }
+
+  .footer {
+    text-align: center;
   }
 }
 
@@ -30,6 +40,7 @@ body {
 
 .ui-input {
   @include ui-input;
+  @include antialias;
 }
 
 .ui-tags {
@@ -41,4 +52,9 @@ body {
     color: $white;
     font-weight: 200;
   }
+}
+
+.ui-submit {
+  @include ui-input;
+  color: $white;
 }

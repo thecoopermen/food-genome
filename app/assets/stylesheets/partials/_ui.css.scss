@@ -1,7 +1,11 @@
+.ui-base {
+  @include round(3);
+}
+
 .ui-input-wrapper {
+  @extend .ui-base;
   border: 1px solid $greyBorder;
   @include inner-shadow(1, 1, 3, rgba($black, 0.075));
-  @include round(3);
   padding: 0.5em 1em;
   background-color: #fafafa;
 }
@@ -12,13 +16,26 @@
   background-color: transparent;
 }
 
+.ui-submit {
+  @extend .ui-base;
+  background-color: $accent;
+  border: 0;
+  padding: 0.75em 2em;
+  margin: 0;
+  cursor: pointer;
+}
+
 .ui-tags {
+  @include group;
   @extend .ui-input-wrapper;
+  padding: 0.5em;
   position: relative;
+  cursor: text;
+  overflow: visible;
 
   input {
     border: 0;
-    background-color: transparent;
+    background: transparent;
   }
 
   li {
@@ -27,20 +44,29 @@
   .tagit-choice {
     background-color: $accent;
     float: left;
+    padding: 0.25em 0.5em;
+    padding-right: 1.75em;
+    @include round(3);
+    margin-right: 0.25em;
   }
 
   .tagit-label {
+    @include inline-block;
     
   }
 
   .tagit-close {
-    
+    @include sp(icon, tag-x);
+    @include sp-center(icon, tag-x, y);
+    right: 10px;
+    margin-left: 5px;
   }
 }
 
 .ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-autocomplete {
   position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 0.5em;
 }

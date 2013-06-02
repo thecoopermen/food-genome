@@ -3,15 +3,21 @@
     width: 400px;
     background-color: $white;
     border: 1px solid $greyBorder; 
+    // border-top: 1px solid $accent;
 
     .header,
     .content,
     .footer {
-       padding: 1em 1.25em;
+       padding: 0.85em 1.25em;
     }
 
     .header {
         border-bottom: 1px solid $greyBorderLight;
+    }
+
+    .content {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
     }
 
     .footer {
@@ -20,5 +26,14 @@
 
     label {
       display: block;
+      margin-bottom: 0.25em;
+    }
+
+    .field {
+      margin-bottom: 1.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 }

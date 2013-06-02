@@ -18,10 +18,6 @@ ul.tagit li.tagit-choice-read-only {
     padding: .2em .5em .2em .5em; 
 } 
 
-ul.tagit li.tagit-choice-editable { 
-    padding: .2em 18px .2em .5em; 
-} 
-
 ul.tagit li.tagit-new {
     padding: .25em 4px .25em 0;
 }
@@ -29,14 +25,6 @@ ul.tagit li.tagit-new {
 ul.tagit li.tagit-choice a.tagit-label {
     cursor: pointer;
     text-decoration: none;
-}
-ul.tagit li.tagit-choice .tagit-close {
-    cursor: pointer;
-    position: absolute;
-    right: .1em;
-    top: 50%;
-    margin-top: -8px;
-    line-height: 17px;
 }
 
 /* used for some custom themes that don't need image icons */

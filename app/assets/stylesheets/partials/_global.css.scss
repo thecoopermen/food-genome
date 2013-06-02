@@ -5,7 +5,6 @@ $space: 10px;
   @include group;
   background-color: $white;
   border-bottom: 1px solid $greyBorder;
-  border-top: 1px solid $accent;
 
   .logo {
     @include sp(site, logo);
