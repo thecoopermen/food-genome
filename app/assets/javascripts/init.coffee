@@ -7,10 +7,12 @@ jQuery ->
       fieldName: 'food[trait_names][]'
       animate: false
       autocomplete:
+        appendTo: '#traits-wrapper'
         position:
           my: 'left top'
           at: 'left bottom'
           of: '#traits'
+          offset: '0 -3'
 
   userDropdown = new app.Toggler
     el: '.js-toggle'

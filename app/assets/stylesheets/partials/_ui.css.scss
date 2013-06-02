@@ -2,12 +2,16 @@
   @include round(3);
 }
 
+.ui-inner-shadow {
+  @include inner-shadow(1, 1, 3, rgba($black, 0.075));
+}
+
 .ui-input-wrapper {
   @extend .ui-base;
+  @extend .ui-inner-shadow;
   border: 1px solid $greyBorder;
-  @include inner-shadow(1, 1, 3, rgba($black, 0.075));
   padding: 0.5em 1em;
-  background-color: #fafafa;
+  background-color: $greyInput;
 }
 
 .ui-input {
@@ -25,6 +29,10 @@
   cursor: pointer;
 }
 
+.ui-tags-wrapper {
+  position: relative;
+}
+
 .ui-tags {
   @include group;
   @extend .ui-input-wrapper;
@@ -36,9 +44,6 @@
   input {
     border: 0;
     background: transparent;
-  }
-
-  li {
   }
 
   .tagit-choice {
@@ -67,6 +72,24 @@
   display: none;
 }
 
-.ui-autocomplete {
+ul.ui-autocomplete {
+  @include box-sizing(border-box);
+  @extend .ui-inner-shadow;
+  background-color: $greyInput;
   position: absolute;
+  width: 100%;
+
+  li {
+    border: 1px solid $greyBorder;
+    border-bottom: 1px solid $greyBorderLight;
+    border-top: 0;
+  }
+
+  a {
+    padding: 0.25em 0.5em;
+  }
+}
+
+.ui-state-focus {
+  background-color: rgba($accent, 0.1);
 }

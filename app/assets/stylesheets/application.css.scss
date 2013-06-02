@@ -1,6 +1,7 @@
 //= require tag-it
 
 @import "compass";
+@import "compass/css3/box-sizing";
 @import 'partials/mixins';
 @import 'partials/site_mixins/sprites';
 @import 'partials/site_mixins/type';

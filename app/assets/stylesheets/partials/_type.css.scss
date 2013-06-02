@@ -58,3 +58,7 @@ body {
   @include ui-input;
   color: $white;
 }
+
+.ui-state-focus {
+  // color: $white;
+}
