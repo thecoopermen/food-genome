@@ -16,9 +16,10 @@ jQuery ->
 
 
   customInputs = new app.JqueryPlugin
-    el: '.ui-input-custom'
+    el: '.ui-uploader-input'
     plugin: 'uniform'
     config:
+      fileDefaultHtml: 'Select File'
       fileButtonClass: 'ui-uploader-button'
       fileClass: 'ui-uploader'
       filenameClass: 'ui-uploader-filename'

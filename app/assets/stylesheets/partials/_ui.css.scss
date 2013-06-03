@@ -6,6 +6,10 @@
   @include inner-shadow(1, 1, 3, rgba($black, 0.075));
 }
 
+.ui-box-shadow {
+  @include box-shadow(1, 1, 3, rgba($black, 0.15));
+}
+
 .ui-input-wrapper {
   @extend .ui-base;
   @extend .ui-inner-shadow;
@@ -62,7 +66,7 @@
 
   .tagit-label {
     @include inline-block;
-    
+
   }
 
   .tagit-close {
@@ -97,4 +101,21 @@ ul.ui-autocomplete {
 
 .ui-state-focus {
   background-color: rgba($accent, 0.1);
+}
+
+.ui-uploader-input {
+  cursor: pointer;
+}
+
+.ui-uploader {
+  @extend .ui-base;
+  @extend .ui-box-shadow;
+  border: 1px solid $greyBorder;
+  cursor: pointer;
+}
+
+.ui-uploader-button {
+  @include sp(icon, file_upload-arr);
+  @include sp-center(icon, file_upload-arr, y);
+  right: 10px;
 }
