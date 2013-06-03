@@ -2,7 +2,7 @@ class Food < ActiveRecord::Base
   has_many :genes
   has_many :traits, through: :genes
 
-  attr_accessible :name, :trait_names
+  attr_accessible :name, :trait_names, :image
 
   validates :name, presence: true
 
@@ -14,5 +14,9 @@ class Food < ActiveRecord::Base
 
   def trait_names
     self.traits.pluck(:name)
+  end
+
+  def image
+    @image = @image
   end
 end

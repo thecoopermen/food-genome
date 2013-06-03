@@ -27,6 +27,11 @@
   padding: 0.75em 2em;
   margin: 0;
   cursor: pointer;
+  @include transition(opacity);
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .ui-tags-wrapper {

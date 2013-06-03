@@ -14,6 +14,16 @@ jQuery ->
           of: '#traits'
           offset: '0 -3'
 
+
+  customInputs = new app.JqueryPlugin
+    el: '.ui-input-custom'
+    plugin: 'uniform'
+    config:
+      fileButtonClass: 'ui-uploader-button'
+      fileClass: 'ui-uploader'
+      filenameClass: 'ui-uploader-filename'
+
+
   userDropdown = new app.Toggler
     el: '.js-toggle'
     toggle: ->

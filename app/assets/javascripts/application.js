@@ -17,6 +17,5 @@
 //= require app
 //= require jquery_base
 //= require jquery_plugin
-//= require tag-it
 //= require_tree .
 //= require_tree ../../../vendor/
