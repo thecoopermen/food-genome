@@ -30,8 +30,8 @@ guard :rspec, cli: '--drb', all_on_start: true, all_after_pass: true do
 end
 
 group :frontend do
-    guard 'livereload' do
-      watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }
-    end
+  guard 'livereload' do
+    watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }
+  end
 end
 

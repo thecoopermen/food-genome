@@ -1,4 +1,33 @@
+$l-margin: 10px;
+
 .l {
 	width: 900px;
 	margin: 0 auto;
+}
+
+.l-col {
+  @include group;
+}
+
+.l-full {
+  @extend .l-col;
+  margin: 0 $l-margin;
+}
+
+.l-list {
+  $space: 15px;
+  margin-left: -#{$space};
+
+  .l-li {
+    float: left;
+  }
+
+  .l-space {
+    margin-left: $space;
+    margin-bottom: $space;
+  }
+
+  .l-quarter {
+    width: 25%;
+  }
 }

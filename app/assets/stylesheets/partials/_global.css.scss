@@ -2,16 +2,8 @@ $space: 10px;
 
 #g-capital {
   position: relative;
+  padding: 20px 0;
   @include group;
-  background-color: $white;
-  border-bottom: 1px solid $greyBorder;
-
-  .logo {
-    @include sp(site, logo);
-    @include sp-center(site, logo, y);
-    margin-left: $space;
-  }
-
   $padding-x: 12px;
 
   .nav {
@@ -20,27 +12,6 @@ $space: 10px;
     li {
         @include inline-block(middle);
         margin-right: -3px;
-    }
-
-    a {
-      border-left: 1px solid $greyE; 
-      padding: 15px $padding-x;
-      @include transition(background-color, 0.1);
-
-      &:hover {
-        background-color: $greyF;
-      }
-    }
-
-    .toggle {
-      padding-right: $padding-x + 16px;
-
-      &:after {
-        content: '';
-        @include sp(icon, dropdown-arr);
-        @include sp-center(icon, dropdown-arr, y);
-        right: 10px;;
-      }
     }
 
     .dropdown {
@@ -60,4 +31,22 @@ $space: 10px;
       }
     }
   }
+}
+
+.g-logo {
+  float: left;
+  @include inline-block;
+  vertical-align: middle;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include font(19, 19);
+  color: #333;
+}
+
+.g-capital-link {
+	@include font(14, 19);
+  text-align: center;
+  font-weight: 600;
+  margin-left: 15px;
+  color: #333;
 }

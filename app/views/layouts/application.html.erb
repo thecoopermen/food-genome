@@ -6,32 +6,36 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-  <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <header id="g-capital">
-    <%= link_to app_name, root_path,  :class => 'logo' %>
+    <div class="l">
+      <div class="l-full">
+        <%= link_to app_name, root_path,  :class => 'g-logo' %>
 
-    <ul class="nav">
-      <li><%= link_to 'New Food', new_food_path %></li>
+        <ul class="nav">
+          <li><%= link_to 'New Food', new_food_path, :class => 'g-capital-link' %></li>
 
-      <% if current_user %>
+          <% if current_user %>
 
-        <li>
-          <a class="js-toggle toggle"><%= current_user.name %></a>
+            <li>
+              <a class="js-toggle toggle g-capital-link"><%= current_user.name %></a>
 
-          <ul class="js-dropdown dropdown">
-            <li><%= link_to 'Sign Out', logout_path %></li>
-          </ul>
-        </li>
+              <ul class="js-dropdown dropdown">
+                <li><%= link_to 'Sign Out', logout_path %></li>
+              </ul>
+            </li>
 
-      <% else %>
+          <% else %>
 
-        <li><%= link_to 'Sign In', login_path %></li>
+            <li><%= link_to 'Sign In', login_path %></li>
 
-      <% end %>
-    </ul>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </header>
 
 <% flash.each do |key, value| %>

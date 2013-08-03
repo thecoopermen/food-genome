@@ -3,8 +3,8 @@
 @import "compass";
 @import "compass/css3/box-sizing";
 @import 'partials/mixins';
-@import 'partials/site_mixins/sprites';
-@import 'partials/site_mixins/type';
+@import 'partials/mixins/sprite_mixins';
+@import 'partials/mixins/type_mixins';
 
 @import 'partials/vars';
 @import 'partials/base_elements';
@@ -15,3 +15,4 @@
 @import 'partials/ui-uniform';
 @import 'partials/ui';
 @import 'partials/pages';
+@import 'partials/modules';

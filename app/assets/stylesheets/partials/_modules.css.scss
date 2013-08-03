@@ -1,0 +1,34 @@
+.m-food {
+}
+
+.m-food-name {
+  @include font(14, 14);
+  font-weight: 500;
+  padding: 10px;
+  color: #333;
+}
+
+.m-food-content {
+  background-color: $white;
+  @include box-shadow(0, 1, 3, rgba($black, 0.2));
+}
+
+.m-food-traits {
+  padding: 10px;
+
+  li {
+    display: inline;
+    @include font(12, 12);
+    font-weight: 600;
+
+    &:after {
+      content: ',';
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}

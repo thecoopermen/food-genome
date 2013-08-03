@@ -1,18 +1,10 @@
 body {
 	@include font;
-	@include serif;
-	color: #333;
+	@include sans;
+	color: #222;
   @include antialias;
 }
 
-#g-capital {
-	@include font(12, 12);
-  text-align: center;
-
-    a {
-      color: #333;
-    }
-}
 
 .pg-title {
   @include font(18, 18);
