@@ -26,8 +26,7 @@ body {
 }
 
 @mixin ui-input {
-  @include serif;
-  @include font(15, 15);
+  @include font(14);
 }
 
 .ui-input {

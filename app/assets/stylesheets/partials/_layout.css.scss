@@ -1,17 +1,33 @@
+$l-width: 900px;
 $l-margin: 10px;
+$l-cols: 14;
+
+$l-margin-percent: ($l-margin / ($l-width + $l-margin * 2)) * 100%;
 
 .l {
-	width: 900px;
+	width: $l-width;
 	margin: 0 auto;
 }
 
 .l-col {
   @include group;
+  float: left;
+  margin: 0 $l-margin-percent;
+}
+
+@for $i from 1 to $l-cols + 1 {
+  .l-col-#{$i} {
+    @extend .l-col;
+    width: ($i / $l-cols * 100%) - (2 * $l-margin-percent);
+  }
 }
 
 .l-full {
-  @extend .l-col;
-  margin: 0 $l-margin;
+  @extend .l-col-#{$l-cols};
+}
+
+.l-half {
+  @extend .l-col-6;
 }
 
 .l-list {

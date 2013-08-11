@@ -1,5 +1,4 @@
 .ui-base {
-  @include round(3);
 }
 
 .ui-inner-shadow {
@@ -12,7 +11,6 @@
 
 .ui-input-wrapper {
   @extend .ui-base;
-  @extend .ui-inner-shadow;
   border: 1px solid $greyBorder;
   padding: 0.5em 1em;
   background-color: $greyInput;
@@ -26,12 +24,14 @@
 
 .ui-submit {
   @extend .ui-base;
+  display: block;
   background-color: $accent;
   border: 0;
   padding: 0.75em 2em;
   margin: 0;
   cursor: pointer;
   @include transition(opacity);
+  width: 100%;
 
   &:hover {
     opacity: 0.8;
@@ -44,6 +44,7 @@
 
 .ui-tags {
   @include group;
+  min-height: 100px;
   @extend .ui-input-wrapper;
   padding: 0.5em;
   position: relative;

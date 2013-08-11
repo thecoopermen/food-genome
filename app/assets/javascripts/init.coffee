@@ -29,3 +29,16 @@ jQuery ->
     el: '.js-toggle'
     toggle: ->
       @$el.siblings '.js-dropdown'
+
+  $newFoodPhotos = $('#js-new-food-photos')
+
+  timer = null
+  $('#js-new-food-name').on 'keypress', ->
+    $el = $(this)
+    clearTimeout timer
+    timer = setTimeout ->
+      $newFoodPhotos.html ''
+      $.get '/photos.json?q=' + $el.val(), (images) ->
+        _.each images, (image) ->
+          $newFoodPhotos.append('<img src="' + image + '" />');
+    , 400

@@ -1,37 +1,41 @@
-<%= link_to 'Back to Foods', food_index_path, :class => 'ui-back'%>
 
-<%= form_for @food, url: food_index_path, :html => {:id => 'pg-new-food-form'} do |f| %>
-  <header class="header">
-    <h1 class="pg-title">New Food</h1>
-  </header>
+<div class="l">
+  <div class="l-col-6">
+    <%= link_to 'Back to Foods', food_index_path, :class => 'ui-back'%>
+    <%= form_for @food, url: food_index_path, :html => {:id => 'pg-new-food-form'} do |f| %>
+    <header class="header">
+      <h1 class="pg-title">New Food</h1>
+    </header>
 
-  <div class="content">
-    <section class="field">
-      <%= f.label :name %>
+    <div class="content">
+      <section class="field">
+        <%= f.label :name %>
 
-      <div class="ui-input-wrapper">
-        <%= f.text_field :name, :class => 'ui-input', :placeholder => 'e.g. pickle, cookie, chicken carbonara...' %><br />
-      </div>
-    </section>
+        <div class="ui-input-wrapper">
+          <%= f.text_field :name, :class => 'ui-input', :id => 'js-new-food-name', :placeholder => 'e.g. pickle, cookie, chicken carbonara...' %><br />
+        </div>
+      </section>
 
-    <section class="field">
-      <%= f.label :traits %>
-      <div class="ui-tags-wrapper" id="traits-wrapper">
-        <ul class="ui-tags" id="traits">
-        </ul>
-      </div>
-    </section>
+      <section class="field">
+        <%= f.label :traits %>
+        <div class="ui-tags-wrapper" id="traits-wrapper">
+          <ul class="ui-tags" id="traits">
+          </ul>
+        </div>
+      </section>
+    </div>
 
-    <section class="field">
-      <%= f.label :image %>
-      <%= f.file_field :image, :class => 'ui-uploader-input' %>
-    </section>
+    <footer class="footer">
+      <%= f.submit :class => 'ui-submit center' %>
+    </footer>
+  <% end %>
+
   </div>
 
-  <footer class="footer">
-    <%= f.submit :class => 'ui-submit center' %>
-  </footer>
-<% end %>
+  <div class="l-col-8" id="js-new-food-photos">
+
+  </div>
+</div>
 
 <script type="text/javascript">
   window.traits = <%= Trait.all.map(&:name).to_json.html_safe %>

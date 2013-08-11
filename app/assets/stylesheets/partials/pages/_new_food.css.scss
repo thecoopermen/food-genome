@@ -1,8 +1,7 @@
 #pg-new-food-form {
     margin: 0 auto;
-    width: 400px;
     background-color: $white;
-    border: 1px solid $greyBorder; 
+    border: 1px solid $greyBorder;
     // border-top: 1px solid $accent;
 
     .header,
@@ -11,17 +10,8 @@
        padding: 0.85em 1.25em;
     }
 
-    .header {
-        border-bottom: 1px solid $greyBorderLight;
-    }
-
     .content {
       padding-top: 1.5em;
-      padding-bottom: 1.5em;
-    }
-
-    .footer {
-        border-top: 1px solid $greyBorderLight;
     }
 
     label {
